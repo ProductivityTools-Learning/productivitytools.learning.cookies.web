@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import axios from "axios";
+
 
 function App() {
+
+  const [date,setDate]=useState()
+  const getDate= async ()=>{
+    var response=await axios.get("https://localhost:7278/Date/Get")
+    console.log(response);
+    setDate(response.data)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src="G.png"/>
+      <button onClick={getDate}>kliknij mnie</button>
+      pawel
+      <span>{date}</span>
+      <img src="https://localhost:7278/Date/Image"/>
     </div>
   );
 }

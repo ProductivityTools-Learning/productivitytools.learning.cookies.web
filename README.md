@@ -19,3 +19,9 @@ var response = await axios.get("https://localhost:7278/Date/Get", { withCredenti
 ![](Images/2023-07-03-22-00-25.png)
 
 Check out the [second part](https://github.com/ProductivityTools-Learning/ProductivityTools.Learning.Cookies.WebApi) for the server side.
+
+For the post you can use:
+
+```
+ axios.defaults.withCredentials = true;
+```
